@@ -14,6 +14,9 @@ Together, these contracts create a cohesive system where NFT holders receive bot
 
 The `MegaOGs` contract is an ERC721-compliant NFT contract that allows users to mint and manage tokens in the "MEGA OGs" collection. It inherits from OpenZeppelin's `ERC721Enumerable` and `ERC721URIStorage` for enumeration and metadata support.
 
+### Contract Address
+`MegaOGs` is deployed on `Electroneum Mainnet` at address [0x56B33D971AfC1d2CEA35f20599E8EF5094Ffd399](https://blockexplorer.electroneum.com/token/0x56B33D971AfC1d2CEA35f20599E8EF5094Ffd399?tab=contract)
+
 ### Key Features
 - **Minting**: Users can mint NFTs by paying a specified price in ETN, transferable to the contract owner. Example: `mint(uint256 count)` requires `count * mintPrice` ETN.
 - **Supply Management**: Default maximum supply is 365 tokens, adjustable by the owner via `updateMaxSupply(uint256 _newMax)`.
@@ -24,11 +27,17 @@ The `MegaOGs` contract is an ERC721-compliant NFT contract that allows users to 
 ### Purpose
 The `MegaOGs` contract serves as the foundation for the ecosystem, defining NFT ownership that determines eligibility for rewards and airdrops.
 
+### Links
+The [MEGA OGs NFT Collection](https://app.electroswap.io/nfts/collection/0x56B33D971AfC1d2CEA35f20599E8EF5094Ffd399) can be found on ElectroSwap's NFT marketplace.
+
 ---
 
 ## MegaToken Contract
 
 The `MegaToken` contract is an ERC20 token contract with advanced features for token distribution, staking, governance vesting, and liquidity provision on ElectroSwap V3.
+
+### Contract Address
+`MegaToken` is deployed on `Electroneum Mainnet` at address [0xB902acda576Bd66f6fedE70262D8964E5C5C1f49](https://blockexplorer.electroneum.com/token/0xB902acda576Bd66f6fedE70262D8964E5C5C1f49?tab=contract)
 
 ### Key Features
 
@@ -60,11 +69,17 @@ The `MegaToken` contract is an ERC20 token contract with advanced features for t
 ### Purpose
 The `MegaToken` contract manages the MEGA token economy, incentivizing NFT holders with airdrops, rewarding stakers, and ensuring liquidity for trading.
 
+### Links
+The [MEGA ERC-20 Token](https://app.electroswap.io/swap?inputCurrency=ETN&outputCurrency=0xB902acda576Bd66f6fedE70262D8964E5C5C1f49) has 100% locked liquidity and is tradeable on ElectroSwap.
+
 ---
 
 ## MegaDistributionV2 Contract
 
 The `MegaDistributionV2` contract distributes ETN rewards to `MegaOGs` NFT holders based on accumulated rewards per token.
+
+### Contract Address
+`MegaDistributionV2` is deployed on `Electroneum Mainnet` at address [0x7B6E1F1d5783fFB4b1a9008107ceba30EA9CdBc6](https://blockexplorer.electroneum.com/address/0x7B6E1F1d5783fFB4b1a9008107ceba30EA9CdBc6?tab=contract)
 
 ### Key Features
 - **Reward Accumulation**: ETN sent to the contract (via `receive()` or `fallback()`) increases `accRewardsPerToken` using `_processIncomingFee(uint256 amount)`.
@@ -75,7 +90,7 @@ The `MegaDistributionV2` contract distributes ETN rewards to `MegaOGs` NFT holde
 - **Security**: Employs `ReentrancyGuard` to prevent reentrancy attacks during distribution.
 
 ### Purpose
-This contract incentivizes holding `MegaOGs` NFTs by periodically distributing ETN rewards based on NFT ownership.
+This contract incentivizes holding `MegaOGs` NFTs by exposing a public function that distributes ETN rewards based on NFT ownership.
 
 ---
 
