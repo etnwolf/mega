@@ -1,0 +1,11 @@
+{
+  "name": "MEGA",
+  "version": "1.0.0",
+  "description": "Contracts for MEGA OGs NFT collection, and the MEGA ERC-20 token",
+  "author": "Architekt",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
+    "@uniswap/v3-core": "1.0.2-solc-0.8-simulate"
+  }
+}
